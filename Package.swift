@@ -17,7 +17,7 @@ let package = Package(
     targets: [
         .target(
             name: "PythonKit",
-            dependencies: ["Backtrace"]
+            dependencies: ["Backtrace"],
             path: "PythonKit"
         ),
         .testTarget(
