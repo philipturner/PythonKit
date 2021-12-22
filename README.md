@@ -2,6 +2,8 @@
 
 Swift framework to interact with Python.
 
+> NOTE: This fork has been modified to make all internal declarations public. Its purpose is to allow more flexibility in Swift-Python interop in [Swift-Colab](https://github.com/philipturner/swift-colab). Do not import this Swift package directly.
+
 ## Requirements
 
 **PythonKit** requires [**Swift 5**](https://swift.org/download/) or higher and has been tested on macOS, Linux and Windows.
