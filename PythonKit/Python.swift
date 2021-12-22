@@ -25,8 +25,7 @@
 
 /// Typealias used when passing or returning a `PyObject` pointer with
 /// implied ownership.
-@usableFromInline
-typealias OwnedPyObjectPointer = PyObjectPointer
+public typealias OwnedPyObjectPointer = PyObjectPointer
 
 /// A primitive reference to a Python C API `PyObject`.
 ///
@@ -97,20 +96,20 @@ public struct PythonObject {
     }
     
     /// Creates a new instance and a new reference.
-    init(_ pointer: OwnedPyObjectPointer) {
+    public init(_ pointer: OwnedPyObjectPointer) {
         reference = PyReference(pointer)
     }
     
     /// Creates a new instance consuming the specified `PyObject` pointer.
-    init(consuming pointer: PyObjectPointer) {
+    public init(consuming pointer: PyObjectPointer) {
         reference = PyReference(consuming: pointer)
     }
     
-    fileprivate var borrowedPyObject: PyObjectPointer {
+    public var borrowedPyObject: PyObjectPointer {
         return reference.borrowedPyObject
     }
     
-    fileprivate var ownedPyObject: OwnedPyObjectPointer {
+    public var ownedPyObject: OwnedPyObjectPointer {
         return reference.ownedPyObject
     }
 }
