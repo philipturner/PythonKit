@@ -39,10 +39,10 @@ let Py_GE: Int32 = 5
 let Py_Initialize: @convention(c) () -> Void =
     PythonLibrary.loadSymbol(name: "Py_Initialize")
 
-public let Py_IncRef: @convention(c) (PyObjectPointer?) -> Void =
+let Py_IncRef: @convention(c) (PyObjectPointer?) -> Void =
     PythonLibrary.loadSymbol(name: "Py_IncRef")
 
-public let Py_DecRef: @convention(c) (PyObjectPointer?) -> Void =
+let Py_DecRef: @convention(c) (PyObjectPointer?) -> Void =
     PythonLibrary.loadSymbol(name: "Py_DecRef")
 
 let PyImport_ImportModule: @convention(c) (
