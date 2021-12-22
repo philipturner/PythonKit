@@ -36,7 +36,7 @@ let Py_GE: Int32 = 5
 // Python library symbols lazily loaded at runtime.
 //===----------------------------------------------------------------------===//
 
-public let Py_Initialize: @convention(c) () -> Void =
+let Py_Initialize: @convention(c) () -> Void =
     PythonLibrary.loadSymbol(name: "Py_Initialize")
 
 public let Py_IncRef: @convention(c) (PyObjectPointer?) -> Void =
