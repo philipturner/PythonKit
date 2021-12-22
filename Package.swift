@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "PythonKit",
-            type: .dynamic
+            type: .dynamic,
             targets: ["PythonKit"]
         )
     ],
