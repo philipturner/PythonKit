@@ -12,12 +12,14 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-server/swift-backtrace", .upToNextMajor(from: "1.3.1"))
+        .package(name: "swift-backtrace", url: "https://github.com/swift-server/swift-backtrace", .upToNextMajor(from: "1.3.1"))
     ],
     targets: [
         .target(
             name: "PythonKit",
-            dependencies: ["Backtrace"],
+            dependencies: [
+                .product(name: "Backtrace", package: "swift-backtrace")
+            ],
             path: "PythonKit"
         ),
         .testTarget(
