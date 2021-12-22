@@ -15,7 +15,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(name: "Backtrace", url: "https://github.com/swift-server/swift-backtrace, .upToNextMajor(from: "1.3.1"))
+        .package(name: "Backtrace", url: "https://github.com/swift-server/swift-backtrace", .upToNextMajor(from: "1.3.1"))
     ],
     targets: [
         .target(
