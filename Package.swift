@@ -4,9 +4,13 @@ import PackageDescription
 
 let package = Package(
     name: "PythonKit",
+    platforms: [
+        .linux
+    ],
     products: [
         .library(
             name: "PythonKit",
+            type: .dynamic
             targets: ["PythonKit"]
         )
     ],
