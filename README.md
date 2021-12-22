@@ -2,7 +2,7 @@
 
 Swift framework to interact with Python.
 
-> NOTE: This fork has been modified to make several internal declarations public. Its purpose is to allow more flexibility in Swift-Python interop in [Swift-Colab](https://github.com/philipturner/swift-colab). Do not import this Swift package directly.
+> NOTE: This fork has been modified to make some internal declarations public. Its purpose is to allow more flexibility for Swift-Python interop in [Swift-Colab](https://github.com/philipturner/swift-colab). Do not import this Swift package directly.
 
 ## Requirements
 
