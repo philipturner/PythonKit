@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 public typealias PyObjectPointer = UnsafeMutableRawPointer
-typealias PyCCharPointer = UnsafePointer<Int8>
+public typealias PyCCharPointer = UnsafePointer<Int8>
 typealias PyBinaryOperation =
     @convention(c) (PyObjectPointer?, PyObjectPointer?) -> PyObjectPointer?
 typealias PyUnaryOperation =
