@@ -49,10 +49,10 @@ let PyImport_ImportModule: @convention(c) (
     PyCCharPointer) -> PyObjectPointer? =
     PythonLibrary.loadSymbol(name: "PyImport_ImportModule")
 
-let PyEval_GetBuiltins: @convention(c) () -> PyObjectPointer =
+public let PyEval_GetBuiltins: @convention(c) () -> PyObjectPointer =
     PythonLibrary.loadSymbol(name: "PyEval_GetBuiltins")
 
-let PyRun_SimpleString: @convention(c) (PyCCharPointer) -> Void =
+public let PyRun_SimpleString: @convention(c) (PyCCharPointer) -> Void =
     PythonLibrary.loadSymbol(name: "PyRun_SimpleString")
 
 let PyErr_Occurred: @convention(c) () -> PyObjectPointer? =
