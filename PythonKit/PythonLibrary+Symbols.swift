@@ -55,6 +55,10 @@ public let PyEval_GetBuiltins: @convention(c) () -> PyObjectPointer =
 public let PyRun_SimpleString: @convention(c) (PyCCharPointer) -> Void =
     PythonLibrary.loadSymbol(name: "PyRun_SimpleString")
 
+let PyErr_SetString: @convention(c) (
+    PyObjectPointer, PyCCharPointer) -> Void =
+    PythonLibrary.loadSymbol(name: "PyErr_SetString")
+
 let PyErr_Occurred: @convention(c) () -> PyObjectPointer? =
     PythonLibrary.loadSymbol(name: "PyErr_Occurred")
 
