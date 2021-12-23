@@ -688,6 +688,10 @@ public struct PythonInterface {
     public var versionInfo: PythonObject {
         return self.import("sys").version_info
     }
+    
+    public func setError(message: String) {
+        PyErr_SetString(PyExc_Exception, message)
+    }
 }
 
 //===----------------------------------------------------------------------===//
