@@ -214,6 +214,9 @@ let PyBool_Type: PyObjectPointer =
 let PySlice_Type: PyObjectPointer =
     PythonLibrary.loadSymbol(name: "PySlice_Type")
 
+let PyExc_Exception: PyObjectPointer =
+    PythonLibrary.loadSymbol(name: "PyExc_Exception")
+
 let PyNumber_Add: PyBinaryOperation =
     PythonLibrary.loadSymbol(name: "PyNumber_Add")
 
