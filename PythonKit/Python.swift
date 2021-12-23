@@ -101,7 +101,7 @@ public struct PythonObject {
     }
     
     /// Creates a new instance consuming the specified `PyObject` pointer.
-    init(consuming pointer: PyObjectPointer) {
+    public init(consuming pointer: PyObjectPointer) {
         reference = PyReference(consuming: pointer)
     }
     
@@ -109,7 +109,7 @@ public struct PythonObject {
         return reference.borrowedPyObject
     }
     
-    var ownedPyObject: OwnedPyObjectPointer {
+    public var ownedPyObject: OwnedPyObjectPointer {
         return reference.ownedPyObject
     }
 }
