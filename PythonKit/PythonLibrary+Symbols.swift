@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 public typealias PyObjectPointer = UnsafeMutableRawPointer
-public typealias PyCCharPointer = UnsafePointer<Int8>
+typealias PyCCharPointer = UnsafePointer<Int8>
 typealias PyBinaryOperation =
     @convention(c) (PyObjectPointer?, PyObjectPointer?) -> PyObjectPointer?
 typealias PyUnaryOperation =
@@ -36,7 +36,7 @@ let Py_GE: Int32 = 5
 // Python library symbols lazily loaded at runtime.
 //===----------------------------------------------------------------------===//
 
-public let Py_Initialize: @convention(c) () -> Void =
+let Py_Initialize: @convention(c) () -> Void =
     PythonLibrary.loadSymbol(name: "Py_Initialize")
 
 let Py_IncRef: @convention(c) (PyObjectPointer?) -> Void =
@@ -48,12 +48,6 @@ let Py_DecRef: @convention(c) (PyObjectPointer?) -> Void =
 let PyImport_ImportModule: @convention(c) (
     PyCCharPointer) -> PyObjectPointer? =
     PythonLibrary.loadSymbol(name: "PyImport_ImportModule")
-
-public let PyEval_GetBuiltins: @convention(c) () -> PyObjectPointer =
-    PythonLibrary.loadSymbol(name: "PyEval_GetBuiltins")
-
-public let PyRun_SimpleString: @convention(c) (PyCCharPointer) -> Void =
-    PythonLibrary.loadSymbol(name: "PyRun_SimpleString")
 
 let PyErr_SetString: @convention(c) (
     PyObjectPointer, PyCCharPointer) -> Void =
@@ -213,9 +207,6 @@ let PyBool_Type: PyObjectPointer =
 
 let PySlice_Type: PyObjectPointer =
     PythonLibrary.loadSymbol(name: "PySlice_Type")
-
-let PyExc_Exception: PyObjectPointer =
-    PythonLibrary.loadSymbol(name: "PyExc_Exception")
 
 let PyNumber_Add: PyBinaryOperation =
     PythonLibrary.loadSymbol(name: "PyNumber_Add")
